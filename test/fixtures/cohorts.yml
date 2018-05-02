@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  schedule: MyString
+  classroom: MyString
+  course_id: 1
+  start_date: 2018-05-02
+  instructor_id: 1
+
+two:
+  name: MyString
+  type: 
+  schedule: MyString
+  classroom: MyString
+  course_id: 1
+  start_date: 2018-05-02
+  instructor_id: 1
