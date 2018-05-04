@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_02_193618) do
+ActiveRecord::Schema.define(version: 2018_05_04_153652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "class_type"
     t.string "schedule"
     t.string "classroom"
     t.integer "course_id"

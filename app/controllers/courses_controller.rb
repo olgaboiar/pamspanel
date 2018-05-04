@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
 
     def index
-        puts "test course"
+        @courses = Course.all
 
     end
 
