@@ -6,7 +6,10 @@ class CreateInstructors < ActiveRecord::Migration[5.2]
       t.string :email
       t.string :phone
       t.integer :user_id
-
+      t.string :userpic
+      t.date :birthday
+      t.integer :salary
+      t.string :education
       t.timestamps
     end
   end

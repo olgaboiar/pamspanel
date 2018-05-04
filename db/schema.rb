@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 2018_05_02_193618) do
     t.string "classroom"
     t.integer "course_id"
     t.date "start_date"
+    t.date "end_date"
     t.integer "instructor_id"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,6 +33,7 @@ ActiveRecord::Schema.define(version: 2018_05_02_193618) do
     t.string "title"
     t.integer "hours"
     t.string "description"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,6 +59,10 @@ ActiveRecord::Schema.define(version: 2018_05_02_193618) do
     t.string "email"
     t.string "phone"
     t.integer "user_id"
+    t.string "userpic"
+    t.date "birthday"
+    t.integer "salary"
+    t.string "education"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -75,6 +82,8 @@ ActiveRecord::Schema.define(version: 2018_05_02_193618) do
     t.string "phone"
     t.integer "user_id"
     t.integer "cohort_id"
+    t.date "birthday"
+    t.string "education"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -84,6 +93,7 @@ ActiveRecord::Schema.define(version: 2018_05_02_193618) do
     t.string "email"
     t.string "password"
     t.string "role"
+    t.string "userpic"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
