@@ -1,1 +1,8 @@
 <p>Courses!</p>
+<% @courses.each do |course| %>
+    <div>
+        <h3><%= course.title %></h3>
+        <h3><%= course.description %></h3>
+        <h3><%= course.hours %></h3>
+    </div>
+<% end %>
