@@ -1,0 +1,12 @@
+<%= form_for @course do |f| %>  
+    <%= f.label :title %>  
+    <%= f.text_field :title %>  
+    <%= f.label :hours %>  
+    <%= f.number_field :hours %>
+    <%= f.label :description %>  
+    <%= f.text_field :description, class:"thisismyphonenumbertag", id: "blah" %>
+    <%= f.label :picture %>  
+    <%= f.text_field :picture %>  
+    <%= f.submit %>
+<% end %>
+
