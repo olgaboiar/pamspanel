@@ -1,8 +1,20 @@
 <p>Courses!</p>
 <% @courses.each do |course| %>
-    <div>
-        <h3><%= course.title %></h3>
-        <h3><%= course.description %></h3>
-        <h3><%= course.hours %></h3>
-    </div>
+    <div class="row">
+        <div class="col s12 m7">
+        <div class="card">
+            <div class="card-image">
+            <img src="images/sample-1.jpg">
+            <span class="card-title"><%= course.title %></span>
+            </div>
+            <div class="card-content">
+            <p><%= course.description %></p>
+            <p><%= course.hours %></p>
+            </div>
+            <div class="card-action">
+            <a href="#">This is a link</a>
+            </div>
+        </div>
+        </div>
+  </div>
 <% end %>
