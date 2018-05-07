@@ -1,1 +1,20 @@
-<p>Cohorts!</p>
+<div class="row">
+<% @cohorts.each do |cohort| %>
+    <div class="col s12 m3">
+        <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+        <a href="cohorts/<%=cohort.id %>" class="card-main-image" style="background-image: url(<%= cohort.picture %>)">
+            <span class="card-title"><%= cohort.name %></span>
+        </a>
+    </div>
+            <div class="card-content">
+            <p>Starts <%= cohort.start_date %></p>
+            <p><%= cohort.schedule %></p>
+            </div>
+            <div class="card-action">
+            <a href="cohorts/<%=cohort.id %>">Show Details</a>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>

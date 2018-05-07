@@ -1,10 +1,38 @@
 class CohortsController < ApplicationController
+    
     def index
-        puts "test cohort"
-
+        @cohorts = Cohort.all
     end
 
     def show
-        puts "hello cohort"
+        @cohort = Cohort.find(params[:id])
     end
+
+    def edit
+        @cohort = Cohort.find(params[:id])
+    end
+
+    def update
+        @cohort = Cohort.find(params[:id])
+        @cohort.update(cohort_params)
+        redirect_to '/cohorts'
+    end
+
+    def destroy
+        Cohort.find(params[:id]).destroy
+        redirect_to '/cohorts'
+    end
+
+    def new 
+        @cohort = Cohort.new
+    end
+
+    def create 
+        Cohort.create(cohort_params)
+        redirect_to '/cohorts'
+    end
+
+    def cohort_params
+        params.require(:cohort).permit(:name, :class_type, :schedule, :classroom, :course_id, :start_date, :end_date, :instructor_id, :picture, :id)
+      end
 end
