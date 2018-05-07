@@ -1,0 +1,11 @@
+<%= form_for @course do |f| %>  
+    <%= f.label :title %>  
+    <%= f.text_field :title, value: @course.title %>  
+    <%= f.label :hours %>  
+    <%= f.number_field :hours, value: @course.hours %>
+    <%= f.label :description %>  
+    <%= f.text_field :description, value: @course.description %>
+    <%= f.label :picture %>  
+    <%= f.text_field :picture, value: @course.picture %>  
+    <%= f.submit %>
+<% end %>
