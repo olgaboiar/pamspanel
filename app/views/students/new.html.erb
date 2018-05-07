@@ -1,0 +1,19 @@
+<%= form_for @student do |f| %>  
+    <%= f.label :first_name %>  
+    <%= f.text_field :first_name %>  
+    <%= f.label :last_name %>  
+    <%= f.text_field :last_name %>
+    <%= f.label :email %>  
+    <%= f.text_field :email %>
+    <%= f.label :phone %> 
+    <%= f.text_field :phone %>
+    <%= f.label :user_id %> 
+    <%= f.number_field :user_id %>
+    <%= f.label :cohort_id %> 
+    <%= f.number_field :cohort_id %> 
+    <%= f.label :birthday %> 
+    <%= f.text_field :birthday %>
+    <%= f.label :education %> 
+    <%= f.text_field :education %>  
+    <%= f.submit %>
+<% end %>

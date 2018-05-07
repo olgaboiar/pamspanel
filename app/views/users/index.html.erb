@@ -1,1 +1,28 @@
-<p>Users!</p>
+<div class="container">
+<table>
+        <thead>
+          <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <% @users.each do |user| %>
+          <tr>
+          
+            <td><%=user.id %></td>
+            <td><%=user.username %></td>
+            <td><%=user.email %></td>
+            <td><%=user.role %></td>
+            <td>status</td>
+            <td>actions</td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+</div>
