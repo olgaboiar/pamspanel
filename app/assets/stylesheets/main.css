@@ -5,3 +5,13 @@
     padding-top: 75%;
     display: block;
 }
+
+.brand-logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    margin-left: 25px;
+}
+
+#school-name {
+    color:red;
+}

@@ -1,3 +1,4 @@
+<div class="container">
 <div class="row">
 <% @cohorts.each do |cohort| %>
     <div class="col s12 m3">
@@ -12,11 +13,12 @@
             <p><%= cohort.schedule %></p>
             </div>
             <div class="card-action">
-            <a href="cohorts/<%=cohort.id %>">Show Details</a>
+            <a href="cohorts/<%=cohort.id %>">Show More</a>
             <a href="cohorts/<%=cohort.id %>/edit">Edit</a>
             <a href="cohorts/<%=cohort.id %>">Delete</a>
             </div>
         </div>
     </div>
     <% end %>
+</div>
 </div>
