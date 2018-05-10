@@ -2,6 +2,9 @@ class CohortsController < ApplicationController
     
     def index
         @cohorts = Cohort.all
+        @courses = Course.all
+
+        @x = set_cohort
     end
 
     def show

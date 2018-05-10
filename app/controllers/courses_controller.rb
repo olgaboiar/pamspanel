@@ -2,10 +2,12 @@ class CoursesController < ApplicationController
 
     def index
         @courses = Course.all
+        @x = set_cohort
     end
 
     def show
         @course = Course.find(params[:id])
+        
     end
 
     def edit

@@ -1,10 +1,29 @@
 <nav class="grey lighten-2">
     <div class="nav-wrapper">
-        <ul id="nav-mobile" class="center hide-on-med-and-down">
+        <ul id="nav-mobile" class="hide-on-med-and-down">
             <li>Filter By:</li>
-            <li><a href="" class="dropdown-trigger" data-target="dropdown-courses-filters">Courses</a></li>
-            <li><a href="" class="dropdown-trigger" data-target="dropdown-instr-filters">Instructors</a></li>
-            <li><a href="" class="dropdown-trigger" data-target="dropdown-profile-filters">Schedule</a></li>
+            <li><a href="" class="dropdown-trigger btn" data-target="dropdown-courses-filters">Courses</a></li>
+            <li><a href="" class="dropdown-trigger btn" data-target="dropdown-cohorts-filters">Cohorts</a></li>
+            <li><a href="" class="dropdown-trigger btn" data-target="dropdown-instr-filters">Instructors</a></li>
+            <li><a href="" class="dropdown-trigger btn" data-target="dropdown-sched-filters">Schedule</a></li>
+            <li><a class="waves-effect waves-light btn">Add New</a></li>
       </ul>
     </div>
+    <ul class="dropdown-content grey lighten-2" id="dropdown-courses-filters">
+        <% @courses.each do |course| %>
+        <li><a href="" class="white-text"><%= course.title %></a></li>
+        <% end %>
+    </ul>
+    <ul class="dropdown-content grey lighten-2" id="dropdown-cohorts-filters">
+        <% @cohorts.each do |cohort| %>
+        <li><a href="" class="white-text"><%= cohort.name %></a></li>
+        <% end %>
+    </ul>
+    <ul class="dropdown-content grey lighten-2" id="dropdown-instr-filters">
+        <li><a href="" class="white-text"><%= @test %></a></li>
+    </ul>
+    <ul class="dropdown-content grey lighten-2" id="dropdown-sched-filters">
+        <li><a href="" class="white-text"><%= @cohor %></a></li>
+    </ul>
+
 </nav>
