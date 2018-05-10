@@ -13,18 +13,7 @@
 
         <tbody>
         <% @users.each do |user| %>
-          <tr>
-          
-            <td><%=user.id %></td>
-            <td><%=user.username %></td>
-            <td><%=user.email %></td>
-            <td><%=user.role %></td>
-            <td>status</td>
-            <td>
-                <a href="users/<%=user.id %>/edit">Edit</a>
-                <a href="users/<%=user.id %>">Deactivate</a>
-            </td>
-          </tr>
+         <%= render user %>
           <% end %>
         </tbody>
       </table>
