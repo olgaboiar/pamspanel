@@ -1,1 +1,43 @@
-<p>Cohort!</p>
+<div class="container">
+    <div class="row">
+        <div class="col s12"><h4><%= @cohort.name %> Cohort - <%= @course.title %> Course</h4></div>
+        <div class="col s12 m4"><div class="main-picture-show" style="background-image: url(<%= @cohort.picture %>)"></div></div>
+        <div class="col s12 m6">
+            <h5>Start Date: <%= @cohort.start_date %></h5>
+            <h5>End Date: <%= @cohort.end_date %></h5>
+            <h5>Instructor: <%= @instructor.first_name %> <%= @instructor.last_name %></h5>
+            <h5>Schedule: <%= @cohort.schedule %></h5>
+            <h5>Classroom: <%= @cohort.classroom %></h5></div>
+        <div class="col s12 m2">
+            <a class="btn" href="./<%=@cohort.id %>/edit">Edit Cohort</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m8"><h5>Cohort Students:</h5></div>
+        <div class="col s12 offset-m2 m2"><div class="btn">Add Student</div></div>
+        
+    </div>
+    <div class="row">
+        <% @students.each do |student| %>
+        <div class="col s6 m3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div >
+              <i class="medium material-icons">person</i>
+            </div>
+            <div >
+              <span class="black-text"><a href="students/<%=student.id %>">
+                <%= student.first_name %> <%= student.last_name %></a>
+              </span>
+            </div>
+          </div>
+          <div class="row valign-wrapper">
+            <div class="btn">
+              Remove
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+</div>
