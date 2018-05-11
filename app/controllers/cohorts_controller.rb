@@ -2,13 +2,13 @@ class CohortsController < ApplicationController
     
     def index
         @cohorts = Cohort.all
-        @courses = Course.all
-
-        @x = set_cohort
     end
 
     def show
         @cohort = Cohort.find(params[:id])
+        @course = Course.find(@cohort.course_id)
+        @instructor = Instructor.find(@cohort.instructor_id)
+        @students = Student.where(cohort_id: @cohort.id)
     end
 
     def edit

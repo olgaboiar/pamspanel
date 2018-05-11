@@ -1,9 +1,10 @@
 
 <tr id="user-<%= user.id %>">
     <td><%= user.id %></td>
+    <td><span><img class="userpic-small" src="<%= user.userpic %>"></span></td>
     <td><%= user.username %></td>
     <td><%= user.email %></td>
     <td><%= user.role %></td>
-    <td>insert status here</td>
     <td><%= link_to 'Edit', edit_user_path(user), remote:true %></td>
+    <td><%= link_to 'Delete', edit_user_path(user), remote:true %></td>
 </tr>
