@@ -14,7 +14,7 @@
     </div>
     <div class="row">
         <div class="col s12 m8"><h5>Cohort Students:</h5></div>
-        <div class="col s12 offset-m2 m2"><div class="btn">Add Student</div></div>
+        <div class="col s12 offset-m2 m2"><a class="modal-trigger btn" href="#add-student-modal">Add Student</a></div>
         
     </div>
     <div class="row">
@@ -39,5 +39,25 @@
         </div>
       </div>
       <% end %>
+    </div>
+</div>
+
+<div id="add-student-modal" class="modal">
+    <div class="modal-content">
+      <h4>Choose the students you want to add to <%= @cohort.name %> cohort:</h4>
+        <%= form_tag :action => 'update', :id => @unassigned_students do %>
+            <% @unassigned_students.each do |student| %>
+                <p>
+                <label>
+                    <input type="checkbox" />
+                    <span><%= student.first_name %> <%= student.last_name %></span>
+                </label>
+                </p>
+             <% end %>
+        <% end %>
+
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Add</a>
     </div>
 </div>

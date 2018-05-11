@@ -9,6 +9,7 @@ class CohortsController < ApplicationController
         @course = Course.find(@cohort.course_id)
         @instructor = Instructor.find(@cohort.instructor_id)
         @students = Student.where(cohort_id: @cohort.id)
+        @unassigned_students = Student.where(cohort_id: nil)
     end
 
     def edit
