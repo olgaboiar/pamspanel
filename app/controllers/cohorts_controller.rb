@@ -36,6 +36,15 @@ class CohortsController < ApplicationController
         redirect_to '/cohorts'
     end
 
+    def addstudents
+        @cohort = Cohort.find(params[:id])
+        puts 'BLAH'
+        @student = Student.find(params[:student_id])
+        puts @student.first_name
+        #Object.update_attribute(:only_one_field, "Some Value")
+        @student.update_attribute(:cohort_id, @cohort.id)
+    end
+
     def cohort_params
         params.require(:cohort).permit(:name, :class_type, :schedule, :classroom, :course_id, :start_date, :end_date, :instructor_id, :picture, :id)
     end
