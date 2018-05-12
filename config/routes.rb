@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :cohorts
   resources :users
 
+  post '/cohorts/:id/addstudents', to: 'cohorts#addstudents'
+
 end

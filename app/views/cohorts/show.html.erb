@@ -43,21 +43,18 @@
 </div>
 
 <div id="add-student-modal" class="modal">
-    <div class="modal-content">
-      <h4>Choose the students you want to add to <%= @cohort.name %> cohort:</h4>
-        <%= form_tag :action => 'update', :id => @unassigned_students do %>
-            <% @unassigned_students.each do |student| %>
-                <p>
-                <label>
-                    <input type="checkbox" />
-                    <span><%= student.first_name %> <%= student.last_name %></span>
-                </label>
-                </p>
-             <% end %>
-        <% end %>
-
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Add</a>
-    </div>
+  <div class="modal-content">
+    <h4>Choose the students you want to add to <%= @cohort.name %> cohort:</h4>
+    <%= form_tag("./#{@cohort.id}/addstudents") do %>
+      <% @unassigned_students.each do |student| %>
+        <p><label>
+        <%= check_box_tag 'student_id', student.id %>
+        <span><%= student.first_name %> <%= student.last_name %></span></label></p>
+      <% end %>
+          <button class="btn waves-effect waves-light grey" type="submit">Submit</button>
+    <% end %>
+  </div>
+  <div class="modal-footer">
+    <a href="" class="modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
 </div>
