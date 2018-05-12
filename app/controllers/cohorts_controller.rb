@@ -38,11 +38,7 @@ class CohortsController < ApplicationController
 
     def addstudents
         @cohort = Cohort.find(params[:id])
-        puts 'BLAH'
-        @student = Student.find(params[:student_id])
-        puts @student.first_name
-        #Object.update_attribute(:only_one_field, "Some Value")
-        @student.update_attribute(:cohort_id, @cohort.id)
+        Student.where(id: params[:student_id]).update_all(cohort_id: @cohort.id)
     end
 
     def cohort_params
