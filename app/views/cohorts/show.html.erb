@@ -23,7 +23,7 @@
           <div id="remove-student-modal" class="modal">
             <div class="modal-content">
               <h5>Are you sure you want to remove <%= student.first_name %> <%= student.last_name %> from <%= @cohort.name %> cohort:</h5>
-              <%= form_tag("./#{@cohort.id}/addstudents") do %>
+              <%= form_tag("./#{@cohort.id}/removestudent") do %>
                 <% @unassigned_students.each do |student| %>
                   <p><label>
                   <%= check_box_tag 'student_id[]', student.id %>
