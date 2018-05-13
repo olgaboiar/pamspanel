@@ -20,20 +20,7 @@
     <div class="row">
         <% @students.each do |student| %>
 
-          <div id="remove-student-modal" class="modal">
-            <div class="modal-content">
-              <h5>Are you sure you want to remove <%= student.first_name %> <%= student.last_name %> from <%= @cohort.name %> cohort:</h5>
-              <%= form_tag("./#{@cohort.id}/removestudent") do %>
-                  <p><label>
-                  <%= check_box_tag 'student_id[]', student.id %>
-                  <span></span></label></p>
-                    <button class="btn waves-effect waves-light grey" type="submit">Remove</button>
-              <% end %>
-            </div>
-            <div class="modal-footer">
-              <a href="" class="modal-close waves-effect waves-green btn-flat">Close</a>
-            </div>
-          </div>
+          
 
 
         <div class="col s6 m3">
@@ -50,8 +37,26 @@
           </div>
           <div class="row valign-wrapper">
             <div>
-              <a class="modal-trigger btn" href="#remove-student-modal">Remove</a>
+              <a class="modal-trigger btn" href="#remove-student-modal-<%=student.id %>">Remove</a>
             </div>
+
+            <div id="remove-student-modal-<%=student.id %>" class="modal">
+            <div class="modal-content">
+              <h5>Are you sure you want to remove <%= student.first_name %> <%= student.last_name %> from <%= @cohort.name %> cohort:</h5>
+              <%= form_tag("./#{@cohort.id}/removestudent") do %>
+
+
+                  <p><label>
+                  <%= check_box_tag 'student_id', student.id %>
+                  <span></span></label></p>
+                    <button class="btn waves-effect waves-light grey" type="submit">Remove</button>
+              <% end %>
+            </div>
+            <div class="modal-footer">
+              <a href="" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            </div>
+          </div>
+
           </div>
         </div>
       </div>
