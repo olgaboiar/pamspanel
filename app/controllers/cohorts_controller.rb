@@ -42,8 +42,9 @@ class CohortsController < ApplicationController
     end
 
     def removestudent
-        @cohort = Cohort.find(params[:id])
-        Student.where(id: params[:student_id]).update(cohort_id: nil)
+        puts "blah"
+        @student = Student.find(params[:student_id])
+        @student.update_attribute(:cohort_id, nil)
     end
 
     def cohort_params

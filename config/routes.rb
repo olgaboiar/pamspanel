@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   post '/cohorts/:id/addstudents', to: 'cohorts#addstudents'
 
-  post '/cohorts/:id/removestudent', to: 'remove#student'
+  post '/cohorts/:id/removestudent', to: 'cohorts#removestudent'
 
 end
