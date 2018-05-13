@@ -41,6 +41,11 @@ class CohortsController < ApplicationController
         Student.where(id: params[:student_id]).update_all(cohort_id: @cohort.id)
     end
 
+    def removestudent
+        @cohort = Cohort.find(params[:id])
+        Student.where(id: params[:student_id]).update(cohort_id: nil)
+    end
+
     def cohort_params
         params.require(:cohort).permit(:name, :class_type, :schedule, :classroom, :course_id, :start_date, :end_date, :instructor_id, :picture, :id)
     end

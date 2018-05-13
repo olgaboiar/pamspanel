@@ -19,6 +19,25 @@
     </div>
     <div class="row">
         <% @students.each do |student| %>
+
+          <div id="remove-student-modal" class="modal">
+            <div class="modal-content">
+              <h5>Are you sure you want to remove <%= student.first_name %> <%= student.last_name %> from <%= @cohort.name %> cohort:</h5>
+              <%= form_tag("./#{@cohort.id}/addstudents") do %>
+                <% @unassigned_students.each do |student| %>
+                  <p><label>
+                  <%= check_box_tag 'student_id[]', student.id %>
+                  <span></span></label></p>
+                <% end %>
+                    <button class="btn waves-effect waves-light grey" type="submit">Remove</button>
+              <% end %>
+            </div>
+            <div class="modal-footer">
+              <a href="" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+          </div>
+
+
         <div class="col s6 m3">
         <div class="card-panel grey lighten-5 z-depth-1">
           <div class="row valign-wrapper">
@@ -32,12 +51,15 @@
             </div>
           </div>
           <div class="row valign-wrapper">
-            <div class="btn">
-              Remove
+            <div>
+              <a class="modal-trigger btn" href="#remove-student-modal">Remove</a>
             </div>
           </div>
         </div>
       </div>
+
+      
+
       <% end %>
     </div>
 </div>
@@ -58,3 +80,4 @@
     <a href="" class="modal-close waves-effect waves-green btn-flat">Close</a>
   </div>
 </div>
+
