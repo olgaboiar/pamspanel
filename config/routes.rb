@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   post '/courses/:id/addcohorts', to: 'courses#addcohorts'
   post '/courses/:id/removecohort', to: 'courses#removecohort'
 
+  post '/instructors/:id/addcohorts', to: 'instructors#addcohorts'
+  post '/instructors/:id/removecohort', to: 'instructors#removecohort'
+
 end

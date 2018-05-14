@@ -1,1 +1,68 @@
-<p>Instr!</p>
+<div class="container">
+    <div class="row">
+        <div class="col s12"><h4><%= @instructor.first_name %> <%= @instructor.last_name %></h4></div>
+        <div class="col s12 m4"><div class="main-picture-show" style="background-image: url(<%= @instructor.userpic %>)"></div></div>
+        <div class="col s12 m6">
+            <h5>Email: <%= @instructor.email %></h5>
+            <h5>Phone: <%= @instructor.phone %></h5>
+            <h5>Birthday: <%= @instructor.birthday %></h5>
+            <h5>Salary: <%= @instructor.salary %></h5>
+            <h5>Education: <%= @instructor.education %></h5></div>
+        <div class="col s12 m2">
+            <a class="btn" href="./<%=@instructor.id %>/edit">Edit Instructor</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m8"><h5>Cohorts Instructor Teaches:</h5></div>
+        <div class="col s12 offset-m2 m2"><a class="modal-trigger btn" href="#add-cohort-modal">Add Cohort</a></div>
+    </div>
+    <div class="row">
+        <% @cohorts.each do |cohort| %>
+        <div class="col s6 m3">
+            <div class="card-panel grey lighten-5 z-depth-1" style="background-image: linear-gradient(to bottom, rgba(100,100,113,0.5), rgba(178,146,113,0.5)), url(<%= cohort.picture %>)">
+                <div class="row valign-wrapper" >
+                    <div >
+                    <span class="black-text"><h4><a href="/cohorts/<%=cohort.id %>"><%= cohort.name %></a></h4></span>
+                    </div>
+                </div>
+                <div class="row valign-wrapper">
+                    <div>
+                    <a class="modal-trigger btn" href="#remove-cohort-modal-<%=cohort.id %>">Remove</a>
+                    </div>
+                    <div id="remove-cohort-modal-<%=cohort.id %>" class="modal">
+                    <div class="modal-content">
+                    <h5>Are you sure you want to remove <%= cohort.name %> from <%= @instructor.first_name %> <%= @instructor.last_name %>:</h5>
+                    <%= form_tag("./#{@instructor.id}/removecohort") do %>
+                        <p><label>
+                        <%= check_box_tag 'cohort_id', cohort.id %>
+                        <span></span></label></p>
+                            <button class="btn waves-effect waves-light grey" type="submit">Remove</button>
+                    <% end %>
+                    </div>
+                    <div class="modal-footer">
+                    <a href="" class="modal-close waves-effect waves-green btn-flat">Cancel</a></div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+</div>
+
+<div id="add-cohort-modal" class="modal">
+  <div class="modal-content">
+    <h5>Choose the cohorts you want to add to <%= @instructor.first_name %> <%= @instructor.last_name %>:</h5>
+    <%= form_tag("./#{@instructor.id}/addcohorts") do %>
+      <% @unassigned_cohorts.each do |cohort| %>
+        <p><label>
+        <%= check_box_tag 'cohort_id[]', cohort.id %>
+        <span><%= cohort.name %></span></label></p>
+      <% end %>
+          <button class="btn waves-effect waves-light grey" type="submit">Submit</button>
+    <% end %>
+  </div>
+  <div class="modal-footer">
+    <a href="" class="modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
+</div>
+
