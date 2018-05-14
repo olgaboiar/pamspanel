@@ -17,5 +17,5 @@
     <%= f.number_field :salary, value: @instructor.salary %>
     <%= f.label :education %> 
     <%= f.text_field :education, value: @instructor.education %>  
-    <%= f.submit %>
+    <button class="btn waves-effect waves-light grey" type="submit" id="form-main-button"><%= f.submit %></button>
 <% end %>

@@ -1,25 +1,25 @@
+<div class="container">
+<div class="row">
+    <h4>Our Instructors:</h4>
+</div>
 <div class="row">
 <% @instructors.each do |instructor| %>
-    <% @cohorts = instructor.cohorts %>
     <div class="col s12 m3">
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-                <a href="courses/<%=instructor.id %>" class="card-main-image" style="background-image: url(<%= instructor.userpic %>)">
+                <a href="courses/<%=instructor.id %>" class="card-main-image">
+                <div >
+              <i class="medium material-icons">android</i>
+            </div>
+                <img src="<%= instructor.userpic %>" class="border-round">
                 </a>
             </div>
             <div class="card-content">
                 <p><%= instructor.first_name %> <%= instructor.last_name %></p>
-                <p>Courses:
-                <% @cohorts.each do |cohort| %>
-                    <% @course=Course.find(cohort.course_id) %>
-                    <%= @course.title %>
-                <% end %>
-                </p>
-                <p><a href="instructors/<%=instructor.id %>">Show Details</a></p>
+                <p><a href="instructors/<%=instructor.id %>">Show More</a></p>
                 <p><a href="instructors/<%=instructor.id %>/edit">Edit</a></p>
-                <p><a href="instructors/<%=instructor.id %>">Delete</a></p>
             </div>
         </div>
     </div>
     <% end %>
-</div>
+</div></div>

@@ -1,3 +1,5 @@
+<div class="container">
+<h5>Fill in this form to create a new cohort:</h5>
 <%= form_for @cohort do |f| %>  
     <%= f.label :name %>  
     <%= f.text_field :name %>  
@@ -16,7 +18,7 @@
     <%= f.label :instructor_id %> 
     <%= f.number_field :instructor_id %>
     <%= f.label :picture %> 
-    <%= f.text_field :picture %>  
-    <%= f.submit %>
+    <%= f.text_field :picture %>
+    <button class="btn waves-effect waves-light grey" type="submit" id="form-main-button"><%= f.submit %></button>
 <% end %>
-
+</div>

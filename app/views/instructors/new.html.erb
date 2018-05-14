@@ -1,3 +1,5 @@
+<div class="container">
+<h5>Fill in this form to create a new instructor:</h5>
 <%= form_for @instructor do |f| %>  
     <%= f.label :first_name %>  
     <%= f.text_field :first_name %>  
@@ -17,5 +19,6 @@
     <%= f.number_field :salary %>
     <%= f.label :education %> 
     <%= f.text_field :education %>  
-    <%= f.submit %>
+    <button class="btn waves-effect waves-light grey" type="submit" id="form-main-button"><%= f.submit %></button>
 <% end %>
+</div>

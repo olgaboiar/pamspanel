@@ -1,3 +1,5 @@
+<div class="container">
+<h5>Update the Course information here:</h5>
 <%= form_for @course do |f| %>  
     <%= f.label :title %>  
     <%= f.text_field :title, value: @course.title %>  
@@ -7,5 +9,6 @@
     <%= f.text_field :description, value: @course.description %>
     <%= f.label :picture %>  
     <%= f.text_field :picture, value: @course.picture %>  
-    <%= f.submit %>
+    <button class="btn waves-effect waves-light grey" type="submit" id="form-main-button"><%= f.submit %></button>
 <% end %>
+</div>
