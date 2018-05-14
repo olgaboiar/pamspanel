@@ -6,6 +6,7 @@ class InstructorsController < ApplicationController
 
     def show
         @instructor = Instructor.find(params[:id])
+        # @cohorts = Cohort.where(course_id: @course.id)
     end
 
     def edit

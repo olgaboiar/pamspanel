@@ -6,15 +6,10 @@
 <% @instructors.each do |instructor| %>
     <div class="col s12 m3">
         <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-                <a href="courses/<%=instructor.id %>" class="card-main-image">
-                <div >
-              <i class="medium material-icons">android</i>
-            </div>
-                <img src="<%= instructor.userpic %>" class="border-round">
-                </a>
-            </div>
-            <div class="card-content">
+           
+            <div class="card-content center">
+                <a href="courses/<%=instructor.id %>">
+              <img src="<%= instructor.userpic %>"class="main-userpicture"></a>
                 <p><%= instructor.first_name %> <%= instructor.last_name %></p>
                 <p><a href="instructors/<%=instructor.id %>">Show More</a></p>
                 <p><a href="instructors/<%=instructor.id %>/edit">Edit</a></p>
