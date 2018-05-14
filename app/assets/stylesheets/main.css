@@ -40,3 +40,9 @@
     margin: 5%;
     left: 35%;
 }
+
+.main-userpicture {
+    width: 80px;
+    height: 85px;
+    border-radius: 100%;
+}
