@@ -6,7 +6,8 @@ class InstructorsController < ApplicationController
 
     def show
         @instructor = Instructor.find(params[:id])
-        # @cohorts = Cohort.where(course_id: @course.id)
+        @cohorts = Cohort.where(instructor_id: @instructor.id)
+        @unassigned_cohorts = Cohort.where(instructor_id: nil)
     end
 
     def edit
@@ -31,6 +32,16 @@ class InstructorsController < ApplicationController
     def create 
         Instructor.create(instructor_params)
         redirect_to '/instructors'
+    end
+
+    def addcohorts
+        @instructor = Instructor.find(params[:id])
+        Cohort.where(id: params[:cohort_id]).update_all(instructor_id: @instructor.id)
+    end
+
+    def removecohort
+        @cohort = Cohort.find(params[:cohort_id])
+        @cohort.update_attribute(:instructor_id, nil)
     end
 
     def instructor_params
