@@ -20,9 +20,6 @@
     <div class="row">
         <% @students.each do |student| %>
 
-          
-
-
         <div class="col s6 m3">
         <div class="card-panel grey lighten-5 z-depth-1">
           <div class="row valign-wrapper">
@@ -30,7 +27,7 @@
               <i class="medium material-icons">person</i>
             </div>
             <div >
-              <span class="black-text"><a href="students/<%=student.id %>">
+              <span class="black-text"><a href="/students/<%=student.id %>">
                 <%= student.first_name %> <%= student.last_name %></a>
               </span>
             </div>
@@ -44,8 +41,6 @@
             <div class="modal-content">
               <h5>Are you sure you want to remove <%= student.first_name %> <%= student.last_name %> from <%= @cohort.name %> cohort:</h5>
               <%= form_tag("./#{@cohort.id}/removestudent") do %>
-
-
                   <p><label>
                   <%= check_box_tag 'student_id', student.id %>
                   <span></span></label></p>

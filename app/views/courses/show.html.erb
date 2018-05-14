@@ -4,7 +4,7 @@
         <div class="col s12 m4"><div class="main-picture-show" style="background-image: url(<%= @course.picture %>)"></div></div>
         <div class="col s12 m6">
             <h5>Hours: <%= @course.hours %></h5>
-            <h6>Description: <%= @course.description %></h6></div>
+            <h6><%= @course.description %></h6></div>
         <div class="col s12 m2">
             <a class="btn" href="./<%=@course.id %>/edit">Edit Course</a>
         </div>
@@ -16,13 +16,10 @@
     <div class="row">
         <% @cohorts.each do |cohort| %>
         <div class="col s6 m3">
-            <div class="card-panel grey lighten-5 z-depth-1">
-                <div class="row valign-wrapper">
+            <div class="card-panel grey lighten-5 z-depth-1" style="background-image: linear-gradient(to bottom, rgba(100,100,113,0.5), rgba(178,146,113,0.5)), url(<%= cohort.picture %>)">
+                <div class="row valign-wrapper" >
                     <div >
-                    <i class="medium material-icons">person</i>
-                    </div>
-                    <div >
-                    <span class="black-text"><a href="cohorts/<%=cohort.id %>"><%= cohort.name %></a></span>
+                    <span class="black-text"><h4><a href="/cohorts/<%=cohort.id %>"><%= cohort.name %></a></h4></span>
                     </div>
                 </div>
                 <div class="row valign-wrapper">

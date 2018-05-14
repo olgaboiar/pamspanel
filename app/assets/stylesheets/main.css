@@ -35,3 +35,8 @@
 .btn {
     background-color: gray !important;
 }
+
+#form-main-button {
+    margin: 5%;
+    left: 35%;
+}

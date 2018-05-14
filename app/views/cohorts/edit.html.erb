@@ -9,8 +9,6 @@
     <%= f.text_field :schedule, value: @cohort.schedule %>
     <%= f.label :classroom %> 
     <%= f.text_field :classroom, value: @cohort.classroom %>
-    <%= f.label :course_id %> 
-    <%= f.number_field :course_id, value: @cohort.course_id %>
     <%= f.label :start_date %> 
     <%= f.date_field :start_date, value: @cohort.start_date, class: 'datepicker' %> 
     <%= f.label :end_date %> 
@@ -19,6 +17,6 @@
     <%= f.number_field :instructor_id, value: @cohort.instructor_id %>
     <%= f.label :picture %> 
     <%= f.text_field :picture, value: @cohort.picture %>  
-    <%= f.submit %>
+    <button class="btn waves-effect waves-light grey" type="submit" id="form-main-button"><%= f.submit %></button>
 <% end %>
 </div>
