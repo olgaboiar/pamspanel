@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :users
 
   post '/cohorts/:id/addstudents', to: 'cohorts#addstudents'
-
   post '/cohorts/:id/removestudent', to: 'cohorts#removestudent'
+
+  post '/courses/:id/addcohorts', to: 'courses#addcohorts'
+  post '/courses/:id/removecohort', to: 'courses#removecohort'
 
 end
