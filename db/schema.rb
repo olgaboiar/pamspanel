@@ -38,21 +38,6 @@ ActiveRecord::Schema.define(version: 2018_05_04_153652) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "doggy_treats", force: :cascade do |t|
-    t.string "brand"
-    t.integer "price"
-    t.integer "owner_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "dogs", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
-    t.string "breed"
-    t.integer "owner_id"
-  end
-
   create_table "instructors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -63,14 +48,6 @@ ActiveRecord::Schema.define(version: 2018_05_04_153652) do
     t.date "birthday"
     t.integer "salary"
     t.string "education"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "owners", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
-    t.string "phonenumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

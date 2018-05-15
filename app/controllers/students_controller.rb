@@ -1,7 +1,8 @@
 class StudentsController < ApplicationController
+    helper_method :sort_column, :sort_direction
 
     def index
-        @students = Student.all
+        @students = Student.all.order("#{sort_column} #{sort_direction}")
     end
 
     def show
@@ -15,7 +16,6 @@ class StudentsController < ApplicationController
     def update
         @student = Student.find(params[:id])
         @student.update(student_params)
-        redirect_to '/students'
     end
 
     def destroy
@@ -30,6 +30,18 @@ class StudentsController < ApplicationController
     def create 
         Student.create(student_params)
         redirect_to '/students'
+    end
+
+    def sortable_columns
+        ["first_name", "last_name", "students.cohort_id"]
+      end
+    
+    def sort_column
+        sortable_columns.include?(params[:column]) ? params[:column] : "last_name"
+    end
+    
+    def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 
     def student_params

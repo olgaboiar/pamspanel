@@ -1,0 +1,18 @@
+<%= form_for @student, remote: true do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, id: :student_first_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, id: :student_last_name %>
+    <%= f.label :email %>
+    <%= f.text_field :email, id: :student_email %>
+    <%= f.label :phone %>
+    <%= f.text_field :phone, id: :student_phone %>
+    <%= f.label :birthday %>
+    <%= f.text_field :birthday, id: :student_birthday %>
+    <%= f.label :cohort_id %>
+    <%= f.text_field :cohort_id, id: :student_cohort_id %>
+    <%= f.label :education %>
+    <%= f.text_field :education, id: :student_education %>
+    <%= f.submit %>
+<% end %>
+
