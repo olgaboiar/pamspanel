@@ -1,9 +1,3 @@
-User.create(username: "adminuser", email: "admin@test.com", password: "123123", role: "admin", userpic: "")
-User.create(username: "studentuser", email: "stud@test.com", password: "123123", role: "student", userpic: "")
-User.create(username: "instructoruser", email: "inst@test.com", password: "123123", role: "instr", userpic: "")
-
-
-
 Instructor.create(first_name: "Bill", last_name: "Zuckerborg", email: "billz@test.com", phone: "6461234519", user_id: nil, userpic: "", birthday: "02-03-1973", salary: 150000, education: "MA")
 Instructor.create(first_name: "James", last_name: "Griffon", email: "james@test.com", phone: "6461234529", user_id: nil, userpic: "", birthday: "02-03-1972", salary: 140000, education: "MA")
 Instructor.create(first_name: "Michelle", last_name: "Kennedy", email: "michelle@test.com", phone: "6461234539", user_id: nil, userpic: "", birthday: "02-03-1971", salary: 180000, education: "PHD")

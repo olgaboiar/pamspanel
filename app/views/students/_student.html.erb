@@ -6,7 +6,9 @@
     <td><%= student.phone %></td>
     <td><%= student.birthday %></td>
     <td><%= ((Time.zone.now - student.birthday.to_time) / 1.year.seconds).floor %></td>
-    <td><%= student.cohort.name %></td>
+    <% if student.cohort_id == nil %>
+    <td>Not assigned</td><% else %>
+    <td><%= student.cohort.name %></td><% end %>
     <td><%= student.education %></td>
     <td><%= link_to 'Edit', edit_student_path(student), remote:true, class: "modal-trigger"%></td>
     <td><%= link_to 'Delete', student_path(student), remote:true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
