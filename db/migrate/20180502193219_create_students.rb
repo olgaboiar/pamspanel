@@ -9,7 +9,6 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.integer :cohort_id
       t.date :birthday
       t.string :education
-
       t.timestamps
     end
   end

@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :instructors
   resources :courses
   resources :cohorts
-  resources :users
 
   post '/cohorts/:id/addstudents', to: 'cohorts#addstudents'
   post '/cohorts/:id/removestudent', to: 'cohorts#removestudent'
