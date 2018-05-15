@@ -26,8 +26,9 @@
          <% end %>
         </tbody>
     </table>
-
-
+    <ul class="pagination center">
+    <%= will_paginate @students %>
+    </ul>
     <div id="student-edit-modal" class="modal">
         <div class="modal-content">
             <h5>Update the information by editing info in this form:</h5>
