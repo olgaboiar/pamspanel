@@ -1,21 +1,40 @@
-<p>Students!</p>
+<div class="container">
 <div class="row">
-<% @students.each do |student| %>
-    <% @cohort = Cohort.find(student.cohort_id) %>
-    <div class="col s12 m3">
-        <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-                <a href="students/<%=student.id %>" class="card-main-image" style="background-image: url()">
-                </a>
-            </div>
-            <div class="card-content">
-                <p><%= student.first_name %> <%= student.last_name %></p>
-                <p>Cohort: <%= @cohort.name %></p>
-                <p><a href="students/<%=student.id %>">Show Details</a></p>
-                <p><a href="students/<%=student.id %>/edit">Edit</a></p>
-                <p><a href="students/<%=student.id %>">Delete</a></p>
-            </div>
+    <h4>Our Students:</h4>
+</div>
+
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th><%= sort_link "first_name" %></th>
+            <th><%= sort_link "last_name" %></th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Birthday</th>
+            <th><%= sort_link "cohort" %></th>
+            <th>Education</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <% @students.each do |student| %>
+            <%= render student %>
+         <% end %>
+        </tbody>
+    </table>
+
+
+    <div id="student-edit-modal" class="modal">
+        <div class="modal-content">
+            <h5>Update the information by editing info in this form:</h5>
+                <span id="editting-form"></span>
+        </div>
+        <div class="modal-footer">
+            <a href="" class="modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
-    <% end %>
 </div>
+
