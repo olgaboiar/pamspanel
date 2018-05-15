@@ -2,18 +2,21 @@
 <h5>Fill in this form to create a new student:</h5>
 <%= form_for @student do |f| %>  
     <%= f.label :first_name %>  
-    <%= f.text_field :first_name, :required => true %>  
+    <%= f.text_field :first_name %>  
     <%= f.label :last_name %>  
-    <%= f.text_field :last_name, :required => true %>
+    <%= f.text_field :last_name %>
     <%= f.label :email %>  
     <%= f.text_field :email %>
     <%= f.label :phone %> 
     <%= f.text_field :phone %>
-    
-    <%= f.label :birthday, :required => true %> 
+    <%= f.label :user_id %> 
+    <%= f.number_field :user_id, value: nil %>
+    <%= f.label :cohort_id %> 
+    <%= f.number_field :cohort_id, value: nil%> 
+    <%= f.label :birthday %> 
     <%= f.text_field :birthday %>
     <%= f.label :education %> 
-    <%= f.select :education, ['HS', 'College', 'Masters', 'PhD'] %> 
+    <%= f.text_field :education %>  
     <button class="btn waves-effect waves-light grey" type="submit" id="form-main-button"><%= f.submit %></button>
 <% end %>
 </div>
