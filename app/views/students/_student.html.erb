@@ -5,6 +5,7 @@
     <td><%= student.email %></td>
     <td><%= student.phone %></td>
     <td><%= student.birthday %></td>
+    <td><%= ((Time.zone.now - student.birthday.to_time) / 1.year.seconds).floor %></td>
     <td><%= student.cohort.name %></td>
     <td><%= student.education %></td>
     <td><%= link_to 'Edit', edit_student_path(student), remote:true, class: "modal-trigger"%></td>
