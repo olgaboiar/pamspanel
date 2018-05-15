@@ -4,6 +4,7 @@ $(document).ready(function(){
         $('#student-edit-modal').modal('open');
       });
     $('.modal').modal();
+    $('select').formSelect();
     $('.datepicker').datepicker();
     $('.dropdown-trigger').dropdown(
         {

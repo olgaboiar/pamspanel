@@ -7,6 +7,7 @@ class StudentsController < ApplicationController
 
     def show
         @student = Student.find(params[:id])
+        
     end
 
     def edit
@@ -33,7 +34,7 @@ class StudentsController < ApplicationController
     end
 
     def sortable_columns
-        ["first_name", "last_name", "students.cohort_id"]
+        ["first_name", "last_name"]
       end
     
     def sort_column
