@@ -2,12 +2,11 @@ class StudentsController < ApplicationController
     helper_method :sort_column, :sort_direction
 
     def index
-        @students = Student.all.order("#{sort_column} #{sort_direction}")
+        @students = Student.all.order("#{sort_column} #{sort_direction}").paginate(:page => params[:page], :per_page => 10)
     end
 
     def show
         @student = Student.find(params[:id])
-        
     end
 
     def edit
