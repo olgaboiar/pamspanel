@@ -33,6 +33,8 @@ gem 'jquery-rails'
 
 gem 'will_paginate', '~> 3.1.0'
 
+gem 'devise'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
