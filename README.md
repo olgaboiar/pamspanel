@@ -1,24 +1,20 @@
-# README
+Pamela’s Panel
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The fifth individual project during Web-Development Fellowship at New York Code and Design Academy.
 
-Things you may want to cover:
+It is a fullstack simple admin panel for a fictitious school whereby the administrator can create users and complete common administrative tasks.
 
-* Ruby version
+The key features of this projetc are:
 
-* System dependencies
+- Built with Ruby on Rails;
+- Activerecord is used to make all database transactions;
+- Materialize is used for page styling (card, tabs, floating buttons);
+- Pagination implemented with will_paginate gem;
+- User authentification implemented with devise gem;
+- Sorting table columns' is implemented with rails helpers;
+- Deletion of student files is enabled via an Ajax call
 
-* Configuration
 
-* Database creation
+* Ruby version 2.4.2
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Project deployed to Heroku
