@@ -14,7 +14,7 @@
     <%= f.label :birthday %> 
     <%= f.text_field :birthday %>
     <%= f.label :salary %> 
-    <%= f.number_field :salary %>
+    <%= f.number_field :salary, min: 1 %>
     <%= f.label :education %> 
     <%= f.select :education, ['HS', 'College', 'Masters', 'PhD'] %>
     <button class="btn waves-effect waves-light grey" type="submit" id="form-main-button"><%= f.submit %></button>

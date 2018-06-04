@@ -12,7 +12,7 @@
     <%= f.label :cohort_id %>
     <%= f.text_field :cohort_id, id: :student_cohort_id %>
     <%= f.label :education %>
-    <%= f.text_field :education, id: :student_education %>
+    <%= f.select :education, ['HS', 'College', 'Masters', 'PhD'] %>
     <%= f.submit %>
 <% end %>
 
