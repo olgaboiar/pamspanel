@@ -35,7 +35,7 @@ class StudentsController < ApplicationController
 
     def sortable_columns
         ["first_name", "last_name"]
-      end
+    end
     
     def sort_column
         sortable_columns.include?(params[:column]) ? params[:column] : "last_name"
