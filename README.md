@@ -17,4 +17,8 @@ The key features of this projetc are:
 
 * Ruby version 2.4.2
 
-* Project deployed to Heroku
+Deployed to Heroku: https://olgasadminpanel.herokuapp.com
+
+Sample User:
+email: test@test.com
+password: 123123
